@@ -8,6 +8,7 @@ async function main() {
   const schema = await buildSchema({
     resolvers: [TodoResolver],
   });
+
   const server = new ApolloServer({ schema });
 
   const { url } = await startStandaloneServer(server, {

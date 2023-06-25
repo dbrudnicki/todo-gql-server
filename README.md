@@ -1,6 +1,7 @@
 # todo-gql-server
 
 Example of a Typescript based Todo GraphGL server.
+NOTE: this uses a simple array as the data store which gets cleared out everytime the server is restarted.
 
 ## Getting Started
 

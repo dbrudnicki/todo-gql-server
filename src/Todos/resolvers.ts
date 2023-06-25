@@ -1,6 +1,6 @@
 import { Arg, Mutation, Query, Resolver } from "type-graphql";
 import { randomUUID } from "crypto";
-import { NewTodoInput, Todo } from "./typedef";
+import { Todo } from "./typedef";
 
 let todoList: Todo[] = [];
 
@@ -12,15 +12,14 @@ export default class TodoResolver {
   }
 
   @Mutation((returns) => Todo)
-  addTodo(@Arg("newTodoData") newTodoData: NewTodoInput): Todo {
+  addTodo(@Arg("title") title: string): Todo {
     const newTodo: Todo = {
       id: randomUUID(),
-      title: newTodoData.title,
       completed: false,
+      title,
     };
 
     todoList.push(newTodo);
-
     return newTodo;
   }
 

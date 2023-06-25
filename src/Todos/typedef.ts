@@ -11,9 +11,3 @@ export class Todo {
   @Field()
   completed: boolean;
 }
-
-@InputType()
-export class NewTodoInput {
-  @Field()
-  title: string;
-}
